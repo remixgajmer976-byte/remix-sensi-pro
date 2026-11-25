@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b14">
+<title>REMIX SENSI PRO</title>
+<style>
+:root{--bg:#080a12;--panel:#111522;--panel2:#171d2d;--line:#293149;--text:#f5f6ff;--muted:#9ba5bc;--purple:#a78bfa;--pink:#fb4f9b;--cyan:#56d9ef;--good:#67e8b1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#35205f 0,transparent 38%),radial-gradient(ellipse at 0 35%,#142d4a 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1120px;margin:auto;padding:22px 16px 56px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:25px}.brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;filter:drop-shadow(0 0 14px #9d65ff55)}.brand-name{font-weight:950;letter-spacing:1.6px;font-size:19px}.brand-name span{display:block;color:var(--purple);font-size:11px;letter-spacing:4px;margin-top:-3px}.pill{border:1px solid #55427e;background:#251b3b;color:#d8c8ff;padding:7px 11px;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:1px}
+.hero{border:1px solid #383052;border-radius:24px;padding:28px;background:linear-gradient(120deg,#17152b 0%,#111827 58%,#17112a 100%);position:relative;overflow:hidden}.hero:after{content:"R";position:absolute;right:18px;top:-65px;font-size:260px;font-weight:1000;color:#ffffff08;line-height:1}.eyebrow{color:var(--cyan);font-size:11px;font-weight:900;letter-spacing:2.8px}.hero h1{font-size:clamp(31px,6vw,55px);line-height:1.02;margin:12px 0 10px;letter-spacing:-1.8px}.gradient{background:linear-gradient(90deg,#fff,#bba4ff 50%,#ff78bd);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:#b9c0d4;max-width:640px;margin:0 0 19px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:850;color:#090b14;background:linear-gradient(100deg,#b9a0ff,#ff7fba)}.btn.secondary{background:#20283a;color:#eef1ff;border:1px solid #39435c}.btn.ghost{background:transparent;color:#c8b8ff;border:1px solid #5a477e}
+.layout{display:grid;grid-template-columns:1.02fr .98fr;gap:17px;margin-top:18px}.card{background:linear-gradient(160deg,#141a29,#101420);border:1px solid var(--line);border-radius:19px;padding:20px;min-width:0}.card h2{font-size:17px;margin:0 0 5px}.sub{color:var(--muted);font-size:12px;margin:0 0 17px}.field{margin:13px 0}.field label{display:block;font-size:12px;color:#c3cbe0;font-weight:750;margin-bottom:7px}.field input,.field select{width:100%;background:#0b101b;border:1px solid #303a52;color:var(--text);padding:12px;border-radius:10px;outline:none}.field input:focus,.field select:focus{border-color:var(--purple);box-shadow:0 0 0 3px #a78bfa20}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.tab{border:1px solid #303950;background:#0d1320;color:#aeb8cf;padding:9px 12px;border-radius:10px;font-size:12px;font-weight:800}.tab.active{background:#30224a;border-color:#9874df;color:#eadfff}.notice{padding:11px 12px;border-radius:11px;background:#10202b;border:1px solid #234455;color:#b9eefa;font-size:11px;margin-top:10px}
+.result{background:linear-gradient(155deg,#17162a,#101522);border-color:#514071}.result-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.live{color:var(--good);font-size:10px;font-weight:900;letter-spacing:1.5px}.settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.stat{background:#0c111d;border:1px solid #293149;border-radius:13px;padding:13px}.stat small{display:block;color:#9da8c0;font-size:11px}.stat strong{font-size:25px;letter-spacing:.3px}.stat em{font-style:normal;color:#a995e9;font-size:10px;margin-left:5px}.result-actions{display:flex;flex-wrap:wrap;gap:9px}.result-actions button{flex:1;min-width:120px}.fine{font-size:10px;color:#8994aa;margin-top:14px}
+.premium{margin-top:18px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;background:linear-gradient(110deg,#231b3b,#161426);border:1px solid #59427e;border-radius:18px;padding:18px}.premium h3{margin:0 0 4px}.premium p{margin:0;color:#b8b3cb;font-size:12px}.toggle{display:flex;align-items:center;gap:9px;font-size:12px;color:#e4d8ff;font-weight:800}.toggle input{accent-color:#b18aff;width:18px;height:18px}
+footer{text-align:center;color:#78839a;font-size:11px;padding:24px 8px 0}
+@media(max-width:780px){.layout{grid-template-columns:1fr}.hero{padding:23px}.hero:after{font-size:190px;right:-5px}.premium{grid-template-columns:1fr}.wrap{padding:15px 12px 40px}}
+@media(max-width:420px){.two{grid-template-columns:1fr}.settings{gap:8px}.stat strong{font-size:22px}.brand-name{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 100 100" role="img" aria-label="Remix Sensi Pro R emblem">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8c5ff"/><stop offset=".48" stop-color="#9872ff"/><stop offset="1" stop-color="#ff65b5"/></linearGradient></defs>
+      <path d="M50 3 91 26v48L50 97 9 74V26Z" fill="#111525" stroke="url(#g)" stroke-width="4"/>
+      <path d="M29 75V25h25c15 0 23 7 23 19 0 9-5 15-14 18l17 13H61L46 64h-4v11Zm13-23h11c7 0 11-2 11-8s-4-8-11-8H42Z" fill="url(#g)"/>
+      <path d="M19 30 50 12l31 18M19 70l31 18 31-18" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="2"/>
+    </svg>
+    <div class="brand-name">REMIX <span>SENSI PRO</span></div>
+  </div>
+  <div class="pill">NEXT-GEN SENSI LAB</div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">PERSONALIZED GAME SETTINGS</div>
+  <h1>FIND YOUR <span class="gradient">PERFECT SENSI.</span></h1>
+  <p>Build a starting sensitivity profile for Free Fire and Free Fire MAX using your device details and play style. Fine-tune it in Training Ground to match your own control.</p>
+  <div class="hero-actions">
+    <button class="btn" onclick="document.querySelector('#device').scrollIntoView({behavior:'smooth'})">GENERATE MY SENSI ↘</button>
+    <button class="btn secondary" id="detectBtn">AUTO-DETECT DEVICE</button>
+  </div>
+</section>
+
+<div class="layout" id="device">
+<section class="card">
+  <h2>01 / DEVICE & PLAY STYLE</h2>
+  <p class="sub">Auto-detection is a best-effort estimate. Edit any field if it is incorrect.</p>
+  <div class="tabs">
+    <button class="tab active" data-game="Free Fire">FREE FIRE</button>
+    <button class="tab" data-game="Free Fire MAX">FREE FIRE MAX</button>
+  </div>
+  <div class="field"><label for="brandSelect">PHONE BRAND</label>
+    <select id="brandSelect"><option>POCO</option><option>Xiaomi / Redmi</option><option>Samsung</option><option>Vivo</option><option>OPPO</option><option>Realme</option><option>Infinix</option><option>OnePlus</option><option>iPhone</option><option>Other</option></select>
+  </div>
+  <div class="field"><label for="model">DEVICE MODEL</label><input id="model" placeholder="e.g. POCO M5" value=""></div>
+  <div class="two">
+    <div class="field"><label for="ram">RAM (GB)</label><select id="ram"><option>2</option><option>3</option><option>4</option><option selected>6</option><option>8</option><option>12</option><option>16</option><option>24</option></select></div>
+    <div class="field"><label for="refresh">REFRESH RATE</label><select id="refresh"><option>60</option><option>90</option><option>120</option><option>144</option><option>165</option><option>Other / unknown</option></select></div>
+  </div>
+  <div class="two">
+    <div class="field"><label for="dpi">DPI (OPTIONAL)</label><input id="dpi" type="number" min="100" max="1000" placeholder="e.g. 392"></div>
+    <div class="field"><label for="screen">SCREEN SIZE</label><select id="screen"><option value="small">Compact</option><option value="medium" selected>Standard</option><option value="large">Large</option></select></div>
+  </div>
+  <div class="field"><label for="style">PLAY STYLE</label><select id="style"><option value="accuracy">Accuracy / controlled drag</option><option value="balanced" selected>Balanced all-rounder</option><option value="high">High sensitivity / fast drag</option></select></div>
+  <div class="field"><label for="control">CONTROL SETUP</label><select id="control"><option value="2">2-finger</option><option value="3" selected>3-finger claw</option><option value="4">4-finger claw</option></select></div>
+  <div class="notice" id="deviceNotice">Device details are processed in this browser. Exact model, actual RAM availability and display refresh rate may not be exposed to websites.</div>
+  <button class="btn" style="width:100%;margin-top:14px" id="generate">GENERATE SENSITIVITY</button>
+</section>
+
+<section class="card result">
+  <div class="result-head"><div><h2>02 / YOUR SENSITIVITY</h2><p class="sub" id="profileLabel">Balanced • Free Fire</p></div><span class="live">● READY</span></div>
+  <div class="settings" id="settings">
+    <div class="stat"><small>GENERAL</small><strong>--</strong><em>/ 200</em></div>
+    <div class="stat"><small>RED DOT</small><strong>--</strong><em>/ 200</em></div>
+    <div class="stat"><small>2X SCOPE</small><strong>--</strong><em>/ 200</em></div>
+    <div class="stat"><small>4X SCOPE</small><strong>--</strong><em>/ 200</em></div>
+    <div class="stat"><small>SNIPER SCOPE</small><strong>--</strong><em>/ 200</em></div>
+    <div class="stat"><small>FREE LOOK</small><strong>--</strong><em>/ 200</em></div>
+    <div class="stat"><small>FIRE BUTTON</small><strong>--</strong><em>%</em></div>
+    <div class="stat"><small>DPI REFERENCE</small><strong>--</strong><em>optional</em></div>
+  </div>
+  <div class="result-actions">
+    <button class="btn" id="copy">COPY SETTINGS</button>
+    <button class="btn secondary" id="save">SAVE PROFILE</button>
+    <button class="btn secondary" id="download">DOWNLOAD TXT</button>
+  </div>
+  <p class="fine">These are suggested starting values, not official game settings or guaranteed headshot values. Adjust gradually in Training Ground. The generator does not change your game or phone settings.</p>
+</section>
+</div>
+
+<section class="premium">
+  <div><h3>✦ REMIX PREMIUM LAB</h3><p>Premium-style profile presets, saved device profiles and extra tuning notes. This demo runs locally; paid subscriptions are not connected.</p></div>
+  <label class="toggle"><input type="checkbox" id="premiumToggle"> Preview Premium</label>
+</section>
+<footer>REMIX SENSI PRO • Independent fan-made settings tool • Not affiliated with Garena.</footer>
+</div>
+<script>
+let currentGame = "Free Fire";
+let lastResult = null;
+const $ = id => document.getElementById(id);
+const clamp = (n,min,max)=>Math.max(min,Math.min(max,n));
+document.querySelectorAll('[data-game]').forEach(btn=>btn.addEventListener('click',()=>{
+  currentGame=btn.dataset.game;
+  document.querySelectorAll('[data-game]').forEach(b=>b.classList.toggle('active',b===btn));
+  $('profileLabel').textContent=$('style').selectedOptions[0].textContent+' • '+currentGame;
+  if(lastResult) generate();
+}));
+function detectDevice(){
+  const ua=navigator.userAgent||"";
+  let brand="Other", model="";
+  if(/iPhone/i.test(ua)){brand="iPhone";model="iPhone (model not exposed by browser)";}
+  else if(/Samsung/i.test(ua)){brand="Samsung";model="Samsung device (edit model)";}
+  else if(/POCO/i.test(ua)){brand="POCO";model="POCO device (edit model)";}
+  else if(/Redmi|Xiaomi/i.test(ua)){brand="Xiaomi / Redmi";model="Xiaomi / Redmi device (edit model)";}
+  else if(/Vivo/i.test(ua)){brand="Vivo";model="Vivo device (edit model)";}
+  else if(/OPPO/i.test(ua)){brand="OPPO";model="OPPO device (edit model)";}
+  else if(/Realme/i.test(ua)){brand="Realme";model="Realme device (edit model)";}
+  else if(/Infinix/i.test(ua)){brand="Infinix";model="Infinix device (edit model)";}
+  $('brandSelect').value=brand;
+  if(model)$('model').value=model;
+  if(navigator.deviceMemory){
+    const mem=[2,3,4,6,8,12,16,24].reduce((a,b)=>Math.abs(b-navigator.deviceMemory)<Math.abs(a-navigator.deviceMemory)?b:a);
+    $('ram').value=String(mem);
+  }
+  const dpr=window.devicePixelRatio||1;
+  $('screen').value=(Math.min(screen.width,screen.height)*dpr>1000)?"large":"standard";
+  $('deviceNotice').textContent="Detected what this browser makes available. Brand/model and RAM estimates can be incomplete; refresh rate and DPI should be entered manually.";
+}
+function generate(){
+  const ram=Number($('ram').value), hz=$('refresh').value==="Other / unknown"?60:Number($('refresh').value);
+  const dpi=Number($('dpi').value)||0, style=$('style').value, fingers=Number($('control').value), screenSize=$('screen').value;
+  // Transparent heuristic: small adjustments only; user testing remains essential.
+  let base=style==="accuracy"?143:style==="high"?184:164;
+  base += ram>=8?2:ram<=3?-5:0;
+  base += hz>=120?2:hz>=90?1:0;
+  base += screenSize==="large"?-3:screenSize==="small"?2:0;
+  base += fingers===4?1:fingers===2?-2:0;
+  base += currentGame==="Free Fire MAX"?-2:0;
+  if(dpi>=450)base-=3; else if(dpi>=400)base-=1; else if(dpi>0&&dpi<360)base+=2;
+  const vals={
+    "GENERAL":clamp(base,80,200),
+    "RED DOT":clamp(base-5,75,200),
+    "2X SCOPE":clamp(base-17,65,200),
+    "4X SCOPE":clamp(base-29,55,200),
+    "SNIPER SCOPE":clamp(base-52,35,180),
+    "FREE LOOK":clamp(base+8,80,200),
+    "FIRE BUTTON":clamp((style==="accuracy"?48:style==="high"?53:50)+(fingers===2?2:fingers===4?-1:0),38,60),
+    "DPI REFERENCE":dpi||"Keep current"
+  };
+  lastResult={vals,game:currentGame,brand:$('brandSelect').value,model:$('model').value||"Not specified",ram,hz,dpi,style:$('style').selectedOptions[0].textContent,fingers,screenSize};
+  $('settings').innerHTML=Object.entries(vals).map(([k,v])=>`<div class="stat"><small>${k}</small><strong>${v}</strong><em>${k==="FIRE BUTTON"?"%":k==="DPI REFERENCE"?"":" / 200"}</em></div>`).join("");
+  $('profileLabel').textContent=$('style').selectedOptions[0].textContent+' • '+currentGame;
+}
+function resultText(){
+ if(!lastResult)return "Generate a profile first.";
+ const r=lastResult;
+ return `REMIX SENSI PRO\nGame: ${r.game}\nDevice: ${r.brand} ${r.model}\nRAM: ${r.ram} GB | Refresh preference: ${r.hz} Hz\nPlay style: ${r.style}\nControl: ${r.fingers}-finger\n\n${Object.entries(r.vals).map(([k,v])=>`${k}: ${v}`).join("\n")}\n\nSuggested starting values only. Tune gradually in Training Ground.`;
+}
+$('detectBtn').addEventListener('click',detectDevice);
+$('generate').addEventListener('click',generate);
+$('copy').addEventListener('click',async()=>{
+ if(!lastResult){generate();}
+ try{await navigator.clipboard.writeText(resultText());$('copy').textContent="COPIED ✓";setTimeout(()=>$('copy').textContent="COPY SETTINGS",1500);}
+ catch(e){window.prompt("Copy your settings:",resultText());}
+});
+$('save').addEventListener('click',()=>{
+ if(!lastResult)generate();
+ try{
+  const saved=JSON.parse(localStorage.getItem("remixProfiles")||"[]");
+  saved.unshift({...lastResult,savedAt:new Date().toISOString()});
+  localStorage.setItem("remixProfiles",JSON.stringify(saved.slice(0,20)));
+  $('save').textContent="SAVED ✓";setTimeout(()=>$('save').textContent="SAVE PROFILE",1500);
+ }catch(e){alert("Browser storage is unavailable. You can download your profile instead.");}
+});
+$('download').addEventListener('click',()=>{
+ if(!lastResult)generate();
+ const blob=new Blob([resultText()],{type:"text/plain"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download="REMIX-SENSI-PRO-profile.txt";a.click();URL.revokeObjectURL(url);
+});
+$('premiumToggle').addEventListener('change',e=>{
+ const p=document.querySelector('.premium');
+ p.style.boxShadow=e.target.checked?"0 0 24px #a78bfa33":"none";
+ p.querySelector('h3').textContent=e.target.checked?"✦ PREMIUM PREVIEW ENABLED":"✦ REMIX PREMIUM LAB";
+});
+detectDevice();
+generate();
+</script>
+</body>
+</html>
